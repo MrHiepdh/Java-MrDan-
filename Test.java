@@ -100,7 +100,7 @@ public class Test {
         sum(12,12,14);
         sumMinMax(100, 1234, 1892323);
         sumDigits(12131231, 3242, 5454);
-        gcd(12, 98, 1298);
+        gcd(10, 15, 8);
         lcm(123,1234,872);
         solveQuadratic(1, 2, 1);
         solveQuadratic(1, -3, 5);
