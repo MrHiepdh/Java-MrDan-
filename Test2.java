@@ -6,7 +6,7 @@ public class Test2 {
         boolean haveSwap = false;
         for (int i = 0; i < a.length; i++) {
             haveSwap = false;
-            for (int j = 0; j < 4 - 1 - i; j++) {
+            for (int j = 0; j < a.length - 1 - i; j++) {
                 if (a[j] > a[j + 1]) {
                     int t = a[j];
                     a[j] = a[j + 1];
@@ -33,14 +33,20 @@ public class Test2 {
 
     public static void removeDuplicate(int a[]) {
         int count = 0;
-        sort(a);
-        int b[] = new int[a.length];
-        for (int i = 0; i < a.length - 1; i++) {
-            if (a[i] != a[i + 1]) {
+        int b[] = new int[count];
+        b[count++] = a[0];
+        for (int i = 1; i < a.length; i++) {
+            boolean have = false;
+            for (int j = 0; j < i; j++) {
+                if (a[i] == a[j]) {
+                    have = true;
+                    break;
+                }
+            }
+            if (!have) {
                 b[count++] = a[i];
             }
         }
-        b[count] = a[a.length - 1];
         for (int i = 0; i <= count; i++) {
             System.out.println(b[i]);
         }
@@ -52,6 +58,7 @@ public class Test2 {
         for (int i = 0; i < a.length && !have; i++) {
             if (a[i] == x) {
                 have = true;
+                break;
             }
         }
         if (have) {
@@ -101,7 +108,7 @@ public class Test2 {
             for (int j = i; j < s; j++) {
                 a[j] = a[j + 1];
             }
-            for (int j = 0; j < n; j++) {
+            for (int j = 0; j < s; j++) {
                 System.out.println(a[j]);
             }
         }
@@ -109,15 +116,35 @@ public class Test2 {
 
     public static void maxAndMin(int a[]) {
         System.out.println("Exercise 7 : ");
-        sort(a);
-        System.out.println("Min: " + a[0]);
-        System.out.println("Max: " + a[a.length - 1]);
+        int max = Integer.MIN_VALUE;
+        int min = Integer.MAX_VALUE;
+        for (int i = 0; i < a.length; i++) {
+            if (min > a[i]) {
+                min = a[i];
+            }
+        }
+        for (int i = 0; i < a.length; i++) {
+            if (max < a[i]) {
+                max = a[i];
+            }
+        }
+        System.out.println("Min: " + min);
+        System.out.println("Max: " + max);
     }
 
     public static void secondLargest(int a[]) {
         System.out.println("Exercise 9 : ");
-        sort(a);
-        System.out.println(a[a.length - 2]);
+        int max1 = Integer.MIN_VALUE;
+        int max2 = Integer.MIN_VALUE;
+        for (int i = 0; i < a.length; i++) {
+            if (a[i] > max1) {
+                max1 = a[i];
+                max2 = max1;
+            } else if (a[i] > max2 && a[i] != max1) {
+                max2 = a[i];
+            }
+        }
+        System.out.println(max2);
     }
 
     public static void average2(int a[]) {
