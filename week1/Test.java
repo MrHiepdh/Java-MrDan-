@@ -1,3 +1,5 @@
+package week1;
+
 import java.lang.Math;
 
 public class Test {

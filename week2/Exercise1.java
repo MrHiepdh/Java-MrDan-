@@ -1,3 +1,5 @@
+package week2;
+
 public class Exercise1 {
     public static void solve(int n) {
         int temp = 3 * (n * (n - 1)) / 2 + n * 2;

@@ -1,3 +1,5 @@
+package week2;
+
 public class Exercise3 {
     public static boolean redundancy(int n) {// redundancy :dư thừa
         int sum = 1;

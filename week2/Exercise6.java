@@ -1,3 +1,5 @@
+package week2;
+
 public class Exercise6 {
     public static void solve(int a, int b, int c, int d) {
         if (b < c || d < a) {

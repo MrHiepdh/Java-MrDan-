@@ -1,3 +1,5 @@
+package week2;
+
 public class Exercise5 {
     // idea1 3 điểm thẳng hàng khi tam giác được chúng tạo ra có S = 0
     public static void solve(int a[][]) {

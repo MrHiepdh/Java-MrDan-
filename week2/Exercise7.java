@@ -1,3 +1,5 @@
+package week2;
+
 public class Exercise7 {
     public static void solve(int a[][]) {
         int N = 10000;
