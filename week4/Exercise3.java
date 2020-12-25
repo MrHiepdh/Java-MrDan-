@@ -19,9 +19,10 @@ public class Exercise3 {
         }
         if (str.charAt(str.length() - 1) != str.charAt(str.length() - 2)) {
             result += str.charAt(str.length() - 1) + "1";
+        } else if (str.charAt(str.length() - 1) == str.charAt(str.length() - 2)) {
+            result += str.charAt(str.length() - 1) + String.valueOf(count);
         }
         System.out.println(result);
         sc.close();
     }
-
 }
