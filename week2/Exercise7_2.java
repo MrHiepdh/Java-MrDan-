@@ -39,9 +39,9 @@ public class Exercise7_2 {
             }
         } else if (inC == true && inD == true) {
             area = Math.abs((a[3][0] - a[2][0]) * (a[3][1] - a[2][1]));
-        } else if (between(a[2][0], a[3][0], a[0][0], a[1][0])) {
+        } else if (between(a[2][0], a[3][0], a[0][0], a[1][0])) {//nếu A và B ở giữa C và D xét theo trục Ox
             area = Math.abs((a[0][0] - a[1][0]) * (a[2][1] - a[3][1]));
-        } else if (between(a[0][0], a[1][0], a[2][0], a[3][0])) {
+        } else if (between(a[0][0], a[1][0], a[2][0], a[3][0])) {//nếu C và D ở giữa A và B xét theo trục Ox
             area = Math.abs((a[2][0] - a[3][0]) * (a[0][1] - a[1][1]));
         }
         System.out.println("Hai hình chữ nhật giao nhau " + area + " đơn vị diện tích!");
