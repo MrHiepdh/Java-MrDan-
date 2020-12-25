@@ -9,9 +9,7 @@ public class Exercise2 {
         int len = str.length();
         boolean equal = true;
         for (int i = 0; i < len / 2; i++) {// xét từ vị trí 0 đến vị trí len/2 - 1
-            if (str.charAt(i) == str.charAt(len - 1 - i)) {
-                equal = true;
-            } else {
+            if (str.charAt(i) != str.charAt(len - 1 - i)) {
                 equal = false;
                 break;
             }
