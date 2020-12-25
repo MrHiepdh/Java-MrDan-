@@ -12,7 +12,7 @@ public class Exercise3 {
                 count++;
             } else {// nếu không thì thêm vào chuỗi kết quả và reset biến đếm 
                 if(count>1){
-                result += str.charAt(i) + String.valueOf(count);
+                result += str.charAt(i) + count;
                 }
                 else if(count==1){
                     result += str.charAt(i);
@@ -24,7 +24,7 @@ public class Exercise3 {
         if (str.charAt(str.length() - 1) != str.charAt(str.length() - 2)) {
             result += str.charAt(str.length() - 1);
         } else if (str.charAt(str.length() - 1) == str.charAt(str.length() - 2)) {
-            result += str.charAt(str.length() - 1) + String.valueOf(count);
+            result += str.charAt(str.length() - 1) + count;
         }
         System.out.println(result);
         sc.close();
