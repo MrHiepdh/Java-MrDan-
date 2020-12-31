@@ -39,7 +39,7 @@ public class Exercise7 {
         // Tô màu là 2 cho tất cả các ô thuộc hcn CD
         for (int i = a[2][0] + 1; i <= a[3][0]; i++) {
             for (int j = a[2][1] + 1; j <= a[3][1]; j++) {
-                tmp[i][j] = 2;
+                tmp[i][j] = 2; 
             }
         }
         // Đếm số ô được tô 2 trong hcn AB
