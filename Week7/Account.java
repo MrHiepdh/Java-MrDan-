@@ -94,8 +94,8 @@ class run7 {
         int age = sc.nextInt();
         Random generator = new Random();// trình tạo số ngẫu nhiên
         int value = generator.nextInt(10000);// trả về ngẫu nhiên các số từ 0 đến <10000
-        Account acc1 = new Account(name, age, ID, value, 1000000);
-        Customer cus1 = new Customer(name, age, ID, acc1);
+        Account acc = new Account(name, age, ID, value, 1000000);
+        Customer cus = new Customer(name, age, ID, acc);
         int work;
         do {
             System.out.println("1.Recharge.");
@@ -105,15 +105,15 @@ class run7 {
             work = sc.nextInt();
             switch (work) {
                 case 1: {
-                    cus1.recharge();
+                    cus.recharge();
                     break;
                 }
                 case 2: {
-                    cus1.withDrawal();
+                    cus.withDrawal();
                     break;
                 }
                 case 3: {
-                    cus1.show();
+                    cus.show();
                 }
                 case 4: {
                     break;
