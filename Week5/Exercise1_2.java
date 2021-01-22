@@ -13,7 +13,6 @@ public class Exercise1_2 {
         String[] call = { "không", "một", "hai", "ba", "bốn", "năm", "sáu", "bảy", "tám", "chín" };
         int i = a.length - 1;
         String result = "";
-
         while (n > 0) {
             result = call[n % 10] + " " + result;
             if (n >= 10) {
