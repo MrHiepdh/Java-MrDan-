@@ -37,6 +37,10 @@ class Customer {
     public void show() {
         account.showInformation();
     }
+
+    public void delete(){
+        account.deleteAccount();
+    }
 }
 
 public class Account {
@@ -75,6 +79,7 @@ public class Account {
     public void deleteAccount() {
         name = " ";
         age = 0;
+        balance = 0;
     }
 
     public void showInformation() {
@@ -115,11 +120,14 @@ class run7 {
                 case 3: {
                     cus.show();
                 }
-                case 4: {
+                case 4:{
+                    cus.delete();
+                }
+                case 5: {
                     break;
                 }
             }
-        } while (work != 4);
+        } while (work != 5);
         sc.close();
     }
 }
