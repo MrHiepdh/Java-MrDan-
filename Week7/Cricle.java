@@ -3,8 +3,8 @@ package Week7;
 import java.util.*;
 
 public class Cricle {
-    double radius;
-    double pi = 3.14;
+    private double radius;
+    private double pi = 3.14;
 
     public void Cricle(double radius) {
         this.radius = radius;
