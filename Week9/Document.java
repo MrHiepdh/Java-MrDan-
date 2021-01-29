@@ -1,6 +1,7 @@
 package Week9;
-
-import java.util.Scanner;
+//vấn đề của e bài này là phần đếm từ và phần định dạng vẫn còn case mà e chưa xử lí đc
+// ví dụ e nhập chuỗi : "cao" sapce tab tab tab space space + "hiep" thì có khi nó lại trả về có một dấu tab ở trc từ thứ 2 và đếm thành 3 từ
+import java.util.Scanner; 
 
 public class Document {
     public static final char tab = '\t';
@@ -12,7 +13,7 @@ public class Document {
     }
 
     public Document(String str) {
-        this.str = str;
+       this.str = str;
     }
 
     public String getStr() {
@@ -23,6 +24,16 @@ public class Document {
         this.str = str;
     }
 
+    public int countA(){
+        int count = 0;
+        String temp = str.toLowerCase();
+        for(int i=0;i<temp.length();i++){
+            if(str.charAt(i)=='a'){
+                count++;
+            }
+        }
+        return count;
+    }
     public String setFormat() {// khi chữa bài a giải thích rõ giúp e về cái split vs ạ,cách nó lưu trữ các từ
                                // sau khi bị tách
         str = str.trim();// remove leading and trailing spaces
@@ -44,9 +55,9 @@ public class Document {
         str = str.trim();// remove leading and trailing spaces
         String[] result = str.split(" \\s");
         for (String ss : result) {
+            ss = ss.trim();
             count++;
         }
-        // return result[0].length();
         return count;
     }
 }
@@ -58,6 +69,7 @@ class run5 {
         Document doc = new Document(str);
         System.out.println(doc.setFormat());
         System.out.println(doc.countWord());
+        System.out.println(doc.countA());
         sc.close();
     }
 }
