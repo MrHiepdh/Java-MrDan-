@@ -1,7 +1,10 @@
 package Week9;
+
 //vấn đề của e bài này là phần đếm từ và phần định dạng vẫn còn case mà e chưa xử lí đc
 // ví dụ e nhập chuỗi : "cao" sapce tab tab tab space space + "hiep" thì có khi nó lại trả về có một dấu tab ở trc từ thứ 2 và đếm thành 3 từ
-import java.util.Scanner; 
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 public class Document {
     public static final char tab = '\t';
@@ -13,7 +16,7 @@ public class Document {
     }
 
     public Document(String str) {
-       this.str = str;
+        this.str = str;
     }
 
     public String getStr() {
@@ -24,44 +27,46 @@ public class Document {
         this.str = str;
     }
 
-    public int countA(){
+    public int countA() {
         int count = 0;
         String temp = str.toLowerCase();
-        for(int i=0;i<temp.length();i++){
-            if(str.charAt(i)=='a'){
+        for (int i = 0; i < temp.length(); i++) {
+            if (str.charAt(i) == 'a') {
                 count++;
             }
         }
         return count;
     }
+
     public String setFormat() {// khi chữa bài a giải thích rõ giúp e về cái split vs ạ,cách nó lưu trữ các từ
                                // sau khi bị tách
         str = str.trim();// remove leading and trailing spaces
-        String[] result = str.split(" \\s");// Separate words according to a space
-        String temp = "";
-        for (String ss : result) {
-            ss = ss.trim();
-            temp += ss + " ";
+        String regex = "[\\s]+";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(str);
+        if (matcher.find()) {
+            str = matcher.replaceAll(" ");
         }
-        str = temp;
         return str;
     }
 
     public int countWord() {
-        if (str == null) {
-            return 0;
+        str = str.trim();// remove leading and trailing spaces
+        String regex = "[\\s]+";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(str);
+        if (matcher.find()) {
+            str = matcher.replaceAll(" ");
         }
         int count = 1;
-        str = str.trim();// remove leading and trailing spaces
-        String[] result = str.split(" \\s");
-        for (String ss : result) {
-            ss = ss.trim();
-            count++;
+        for(int i=0;i<str.length();i++){
+            if(str.charAt(i)==' '){
+                count++;
+            }
         }
         return count;
     }
 }
-
 class run5 {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
