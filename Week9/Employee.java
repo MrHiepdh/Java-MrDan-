@@ -1,6 +1,7 @@
 package Week9;
-public class Employee{
-private int Id;
+
+public class Employee {
+    private int Id;
     private String firstName;
     private String lastName;
     private int Salary;
@@ -29,11 +30,11 @@ private int Id;
     }
 
     public int getAnnualSalary() {
-        return Salary * 12 + raiseSalary();
+        return this.Salary * 12 + this.raiseSalary();
     }
 
     public String getName() {
-        return firstName + " " + lastName;
+        return  this.firstName + " " + this.lastName;
     }
 
     public String toString() {
