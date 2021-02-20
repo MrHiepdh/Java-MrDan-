@@ -58,6 +58,7 @@ public class Athletes {// vận động viên
         this.age = sc.nextInt();
         sc.nextLine();// sau những method nextInt() hay nextDouble kí tự Enter vẫn còn trong bộ nhớ
                       // đệm nên cần thêm 1 dòng sc.nextLine()
+                      //Another way to always use nextLine : this.age = Integer.parsenIn(input.nextLine())
         System.out.print("Enter the subject: ");
         this.subject = sc.nextLine();
         System.out.print("Enter the height: ");
